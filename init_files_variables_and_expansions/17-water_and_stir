@@ -1,2 +1,2 @@
 #!/bin/bash
-printf '%o\n' $(( $(echo $WATER | tr 'water' '01234' | awk '{v=0; n=split($0,a,""); for(i=1;i<=n;i++) v=v*5+a[i]; print v}') + $(echo $STIR | tr 'stir.' '01234' | awk '{v=0; n=split($0,a,""); for(i=1;i<=n;i++) v=v*5+a[i]; print v}') )) | tr '01234567' 'bestchol'
+printf '%o\n' $(( $(echo $WATER | tr 'water' '01234' | python3 -c "import sys; s=sys.stdin.read().strip(); print(int(s,5))") + $(echo $STIR | tr 'stir.' '01234' | python3 -c "import sys; s=sys.stdin.read().strip(); print(int(s,5))") )) | tr '01234567' 'bestchol'
