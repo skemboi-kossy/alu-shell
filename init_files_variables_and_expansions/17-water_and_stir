@@ -1,2 +1,2 @@
 #!/bin/bash
-printf '%o\n' $(( $(echo $WATER | tr 'water' '01234' | python3 -c "import sys,functools; print(functools.reduce(lambda a,b: a*5+b, map(int,sys.stdin.read().strip())))") + $(echo $STIR | tr 'stir.' '01234' | python3 -c "import sys,functools; print(functools.reduce(lambda a,b: a*5+b, map(int,sys.stdin.read().strip())))") )) | tr '01234567' 'bestchol'
+printf '%o\n' $(( $(echo $WATER | tr 'water' '01234' | python3 -c "print(int(input(),5))") + $(echo $STIR | tr 'stir.' '01234' | python3 -c "print(int(input(),5))") )) | tr '01234567' 'bestchol'
