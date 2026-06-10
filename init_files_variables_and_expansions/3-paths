@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 echo "$PATH" | tr ':' '\n' | grep -c '.'
+=======
+echo "$PATH" | tr ":" "\n" | grep -c "[^[:space:]]"
+>>>>>>> 9ad03e9ba029977ca3be8ffbc8250880673a1c0c
